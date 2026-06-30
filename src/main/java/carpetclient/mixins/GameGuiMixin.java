@@ -1,0 +1,37 @@
+package carpetclient.mixins;
+
+import carpetclient.CarpetClient;
+import carpetclient.Config;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GameGui;
+import net.minecraft.client.render.Window;
+import net.minecraft.scoreboard.ScoreboardObjective;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+/**
+ * Removes scoreboard on the right, from nessie.
+ */
+@Mixin(GameGui.class)
+public class GameGuiMixin {
+	@Shadow
+	@Final
+	private Minecraft minecraft;
+
+	@Inject(method = "render", at = @At("TAIL"))
+	private void postRender(float partialTicks, CallbackInfo ci) {
+		Window window = new Window(this.minecraft);
+		CarpetClient.onPostRenderHUD(window.getWidth(), window.getHeight());
+	}
+
+	@Inject(method = "renderScoreboardObjective", at = @At("HEAD"), cancellable = true)
+	private void toggleScoreboard(ScoreboardObjective objective, Window scaledRes, CallbackInfo ci) {
+		if (Config.isScoreboardHidden.getValue()) {
+			ci.cancel();
+		}
+	}
+}

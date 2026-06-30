@@ -1,0 +1,9 @@
+{
+  "required": false,
+  "package": "carpetclient.mixins",
+  "plugin": "carpetclient.mixins.optifine.OptifinePlugin",
+  "mixins": [
+    "optifine.GameRendererMixin",
+    "optifine.RenderChunkMixin"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "carpet_client",
+	"version": "${version}",
+	"name": "CarpetClient",
+	"description": "This is a client side support to Carpet server for Minecraft version 1.12.2.\nThis mod is intended for the use of only when connected to a Carpet server in multiplayer.",
+	"authors": [
+		"Carpet dev team",
+    "dragonbabyfly"
+	],
+	"contact": {
+		"homepage": "https://github.com/thdaele/CarpetClient",
+		"sources": "https://github.com/thdaele/CarpetClient"
+	},
+	"license": "Minecraft Mod Public License",
+	"icon": "assets/example_mod/icon.png",
+  "environment": "client",
+	"entrypoints": {
+    "client-init": [
+      "carpetclient.CarpetClient"
+    ]
+  },
+	"mixins": [
+    "mixins.carpetclient.json",
+    "mixins.carpetclient.optifinecompat.json"
+	],
+	"depends": {
+    "fabricloader": ">=0.14.21",
+		"minecraft": "1.12.2",
+    "osl-networking": ">=0.6.0",
+    "osl-entrypoints": ">=0.4.0",
+    "osl-keybinds": ">=0.1.0",
+    "osl-lifecycle-events": ">=0.5.0"
+	}
+}
