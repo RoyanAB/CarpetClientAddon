@@ -1,0 +1,22 @@
+package cn.royan.carpetclientaddon.rulesender;
+
+import carpet.CarpetServer;
+import net.minecraft.server.entity.living.player.ServerPlayerEntity;
+
+public class CarpetClientRuleTips {
+
+	public static void getInfoRuleTip(ServerPlayerEntity sender, String rule) {
+		String value = getRuleTip(rule);
+		if (value != null) {
+			sendRuleTip(sender, rule, value);
+		}
+	}
+
+	public static void sendRuleTip(ServerPlayerEntity sender, String rule, String value) {
+		CarpetClientRuleChanger.updatePlayerRuleInfo(sender, rule, value);
+	}
+
+	private static String getRuleTip(String rule) {
+		return CarpetServer.settingsManager.getCarpetRule(rule).desc();
+	}
+}

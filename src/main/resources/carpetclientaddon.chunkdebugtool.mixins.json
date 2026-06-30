@@ -1,0 +1,35 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.royan.carpetclientaddon.chunkdebugtool.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "block.BlockMixin",
+    "block.ChestBlockMixin",
+    "block.EndPortalBlockMixin",
+    "block.PistonBaseBlockMixin",
+    "blockentity.ChestBlockEntityMixin",
+    "blockentity.EndGatewayBlockEntityMixin",
+    "blockentity.HopperBlockEntityMixin",
+    "blockentity.MovingBlockEntityMixin",
+    "entity.EntityMixin",
+    "entity.GoalSelectorMixin",
+    "entity.LivingEntityMixin",
+    "entity.VillageMixin",
+    "player.ChunkHolderMixin",
+    "player.ChunkMapMixin",
+    "player.ServerPlayNetworkHandlerMixin",
+    "server.MinecraftServerMixin",
+    "server.ServerChunkCacheMixin",
+    "server.ServerWorldMixin",
+    "server.WorldChunkMixin",
+    "server.WorldMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

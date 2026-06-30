@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.royan.carpetclientaddon.marks.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "genertor.DebugChunkGeneratorMixin",
+    "genertor.FlatChunkGeneratorMixin",
+    "genertor.NetherChunkGeneratorMixin",
+    "genertor.OverworldChunkGeneratorMixin",
+    "genertor.StructureFeatureMixin",
+    "genertor.TheEndChunkGeneratorMixin",
+    "village.SavedVillageDataMixin",
+    "village.VillageMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

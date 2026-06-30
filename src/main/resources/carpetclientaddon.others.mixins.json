@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.royan.carpetclientaddon.others.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ChunkHolderMixin",
+    "ChunkMapMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

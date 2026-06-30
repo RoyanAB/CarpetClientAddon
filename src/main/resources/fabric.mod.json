@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "carpetclientaddon",
+	"version": "${version}",
+	"name": "CarpetClientAddon",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://example.com/",
+		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/carpetclientaddon/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"init": [
+      "cn.royan.carpetclientaddon.CarperClientAddon"
+		],
+    "preLaunch": [
+      "cn.royan.carpetclientaddon.CarperClientAddon::loadExtension"
+    ]
+  },
+	"mixins": [
+		"carpetclientaddon.chunkdebugtool.mixins.json",
+    "carpetclientaddon.network.mixins.json",
+    "carpetclientaddon.others.mixins.json",
+    "carpetclientaddon.marks.mixins.json",
+    "carpetclientaddon.mixins.json"
+	],
+  "accessWidener": "carpetclientaddon.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "1.12.2",
+		"osl-entrypoints": ">=0.4.0",
+    "carpet": "*"
+	}
+}
