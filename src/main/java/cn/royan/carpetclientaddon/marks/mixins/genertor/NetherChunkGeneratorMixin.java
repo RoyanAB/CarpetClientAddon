@@ -21,7 +21,6 @@ public class NetherChunkGeneratorMixin implements ChunkGeneratorInterface {
 	@Unique
 	@Override
 	public NbtList getBoundingBoxes(Entity entity) {
-		System.out.println(2);
 		NbtList nbttaglist = new NbtList();
 		nbttaglist.addElement(((StructureFeatureInterface) this.fortress).getBoundingBoxes(entity, CarpetClientMarkers.FORTRESS));
 		return nbttaglist;
