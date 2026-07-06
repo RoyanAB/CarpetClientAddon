@@ -47,9 +47,9 @@ public class GameMenuScreenMixin extends Screen {
 		}
 
 		if (guibutton.id == carpetClientID) {
-			if (Minecraft.getInstance().isIntegratedServerRunning()) {
-				return; // not available if in singleplayer or LAN server mode
-			}
+//			if (Minecraft.getInstance().isIntegratedServerRunning()) {
+//				return; // not available if in singleplayer or LAN server mode
+//			}
 
 			Minecraft.getInstance().openScreen(new ConfigGUI(guiIngameMenu));
 		}
@@ -82,7 +82,8 @@ public class GameMenuScreenMixin extends Screen {
 
 		// Insert carpet button in main window of escape menu.
 		carpetButton = new ButtonWidget(carpetClientID, gui.width / 2 - 100, insertAtYPos, 200, 20, "Carpet Client");
-		carpetButton.active = !Minecraft.getInstance().isIntegratedServerRunning();
+//		carpetButton.active = !Minecraft.getInstance().isIntegratedServerRunning();
+		carpetButton.active = true;
 		buttonList.add(carpetButton);
 	}
 }

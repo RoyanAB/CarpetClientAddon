@@ -1,6 +1,8 @@
 package carpetclient.mixins.optifine;
 
 import carpetclient.CarpetClient;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -22,11 +24,18 @@ public class OptifinePlugin implements IMixinConfigPlugin {
 
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-		try {
-			Class.forName("optifine.OptiFineForgeTweaker");
+//		try {
+//			Class.forName("optifine.OptiFineForgeTweaker");
+//			CarpetClient.LOGGER.info("Optifine detected");
+//			return true;
+//		} catch (ClassNotFoundException e) {
+//			CarpetClient.LOGGER.info("Optifine not detected");
+//			return false;
+//		}
+		if(FabricLoader.getInstance().isModLoaded("optifabric")) {
 			CarpetClient.LOGGER.info("Optifine detected");
 			return true;
-		} catch (ClassNotFoundException e) {
+		} else  {
 			CarpetClient.LOGGER.info("Optifine not detected");
 			return false;
 		}
