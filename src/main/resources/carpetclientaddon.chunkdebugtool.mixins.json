@@ -26,6 +26,7 @@
     "server.WorldMixin"
   ],
   "client": [
+    "client.IntegratedServerMixin"
   ],
   "server": [
   ],
