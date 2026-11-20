@@ -1,7 +1,7 @@
 plugins {
 	id 'maven-publish'
-	id 'fabric-loom' version '1.17-SNAPSHOT'
-	id 'ploceus' version '1.17-SNAPSHOT'
+	id 'fabric-loom' version '1.19-SNAPSHOT'
+	id 'ploceus' version '1.19-SNAPSHOT'
 }
 
 base {
@@ -16,6 +16,12 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven { url = 'https://jitpack.io' }
+	maven { url 'https://fastdl.crazyh.fun/maven/' }
+}
+
+ploceus {
+	setIntermediaryGeneration(2)
 }
 
 loom {
@@ -31,7 +37,8 @@ dependencies {
 
 	ploceus.dependOsl(project.osl_version)
 
-	modImplementation fileTree(dir: 'libs', include: ['*.jar'])
+	//modImplementation fileTree(dir: 'libs', include: ['*.jar'])
+	modImplementation "carpet:ornithe-carpet:${carpet_core_version}+mc1.12.2"
 	include(implementation("net.fabricmc:tiny-mappings-parser:0.3.0+build.17"))
 }
 

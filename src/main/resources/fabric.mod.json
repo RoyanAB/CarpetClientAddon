@@ -34,6 +34,6 @@
 		"fabricloader": ">=0.16.0",
 		"minecraft": "1.12.2",
 		"osl-entrypoints": ">=0.4.0",
-    "carpet": "*"
+    "carpet": ">=0.3.0"
 	}
 }
