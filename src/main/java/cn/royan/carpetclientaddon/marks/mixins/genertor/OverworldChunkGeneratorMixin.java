@@ -36,13 +36,13 @@ public class OverworldChunkGeneratorMixin implements ChunkGeneratorInterface {
 
 	@Shadow
 	@Final
-	private TempleStructure witchHut;
+	private TempleStructure temple;
 
 	@Unique
 	@Override
 	public NbtList getBoundingBoxes(Entity entity) {
 		NbtList nbttaglist = new NbtList();
-		nbttaglist.addElement(((StructureFeatureInterface) this.witchHut).getBoundingBoxes(entity, CarpetClientMarkers.TEMPLE));
+		nbttaglist.addElement(((StructureFeatureInterface) this.temple).getBoundingBoxes(entity, CarpetClientMarkers.TEMPLE));
 		nbttaglist.addElement(((StructureFeatureInterface) this.village).getBoundingBoxes(entity, CarpetClientMarkers.VILLAGE));
 		nbttaglist.addElement(((StructureFeatureInterface) this.stronghold).getBoundingBoxes(entity, CarpetClientMarkers.STRONGHOLD));
 		nbttaglist.addElement(((StructureFeatureInterface) this.mineshaft).getBoundingBoxes(entity, CarpetClientMarkers.MINESHAFT));
