@@ -3,6 +3,7 @@ package cn.royan.carpetclientaddon;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import cn.royan.carpetclientaddon.chunkdebugtool.deobfuscator.StackTraceDeobfuscator;
+import cn.royan.carpetclientaddon.network.CarpetClientMining;
 import cn.royan.carpetclientaddon.network.CarpetClientServer;
 import cn.royan.carpetclientaddon.network.util.PluginChannelManager;
 import cn.royan.carpetclientaddon.util.Translations;
@@ -42,6 +43,7 @@ public class CarperClientAddon implements ModInitializer, CarpetExtension {
 
 		CCServer = new CarpetClientServer();
 		pluginChannels.register(CCServer);
+		pluginChannels.register(new CarpetClientMining());
 	}
 
 	@Override
